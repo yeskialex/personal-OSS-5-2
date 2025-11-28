@@ -1,0 +1,64 @@
+{
+  "games": [
+    {
+      "id": "1",
+      "released": "2017-03-03T00:00:00.000Z",
+      "name": "The Legend of Zelda: Breath of the Wild",
+      "platform": "Nintendo Switch"
+    },
+    {
+      "id": "2",
+      "released": "2018-04-20T00:00:00.000Z",
+      "name": "God of War",
+      "platform": "PlayStation"
+    },
+    {
+      "id": "3",
+      "released": "2020-12-10T00:00:00.000Z",
+      "name": "Cyberpunk 2077",
+      "platform": "PC"
+    },
+    {
+      "id": "4",
+      "released": "2021-12-08T00:00:00.000Z",
+      "name": "Halo Infinite",
+      "platform": "Xbox"
+    },
+    {
+      "id": "5",
+      "released": "2017-10-27T00:00:00.000Z",
+      "name": "Super Mario Odyssey",
+      "platform": "Nintendo Switch"
+    },
+    {
+      "id": "6",
+      "released": "2020-11-12T00:00:00.000Z",
+      "name": "Spider-Man: Miles Morales",
+      "platform": "PlayStation"
+    },
+    {
+      "id": "7",
+      "released": "2022-02-25T00:00:00.000Z",
+      "name": "Elden Ring",
+      "platform": "PC"
+    },
+    {
+      "id": "8",
+      "released": "2021-11-09T00:00:00.000Z",
+      "name": "Forza Horizon 5",
+      "platform": "Xbox"
+    },
+    {
+      "id": "9",
+      "released": "2020-03-20T00:00:00.000Z",
+      "name": "Animal Crossing: New Horizons",
+      "platform": "Nintendo Switch"
+    },
+    {
+      "id": "10",
+      "released": "2020-06-19T00:00:00.000Z",
+      "name": "The Last of Us Part II",
+      "platform": "PlayStation"
+    }
+  ]
+}
