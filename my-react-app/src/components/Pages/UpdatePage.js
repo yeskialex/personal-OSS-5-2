@@ -52,29 +52,30 @@ const UpdatePage = () => {
 
 
   useEffect(() => {
+    const loadGame = async () => {
+      try {
+        const gameData = await apiService.getGameById(id);
+        const formattedDate = gameData.released
+          ? new Date(gameData.released).toISOString().split('T')[0]
+          : '';
+
+        setFormData({
+          name: gameData.name || '',
+          platform: gameData.platform || '',
+          released: formattedDate,
+          genre: gameData.genre || '',
+          developer: gameData.developer || ''
+        });
+        setLoading(false);
+      } catch (error) {
+        setError(`Error loading game: ${error.message}`);
+        setLoading(false);
+      }
+    };
+
     loadGame();
   }, [id]);
 
-  const loadGame = async () => {
-    try {
-      const gameData = await apiService.getGameById(id);
-      const formattedDate = gameData.released
-        ? new Date(gameData.released).toISOString().split('T')[0]
-        : '';
-
-      setFormData({
-        name: gameData.name || '',
-        platform: gameData.platform || '',
-        released: formattedDate,
-        genre: gameData.genre || '',
-        developer: gameData.developer || ''
-      });
-      setLoading(false);
-    } catch (error) {
-      setError(`Error loading game: ${error.message}`);
-      setLoading(false);
-    }
-  };
 
   const validateField = (fieldName, value) => {
     let isValid = true;
@@ -134,6 +135,9 @@ const UpdatePage = () => {
           delete newErrors.developer;
           if (developerRef.current) developerRef.current.style.borderColor = '';
         }
+        break;
+
+      default:
         break;
     }
 

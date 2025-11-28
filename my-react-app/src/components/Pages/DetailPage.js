@@ -40,19 +40,20 @@ const DetailPage = () => {
   };
 
   useEffect(() => {
+    const loadGame = async () => {
+      try {
+        const gameData = await apiService.getGameById(id);
+        setGame(gameData);
+        setLoading(false);
+      } catch (error) {
+        setError(`Error loading game: ${error.message}`);
+        setLoading(false);
+      }
+    };
+
     loadGame();
   }, [id]);
 
-  const loadGame = async () => {
-    try {
-      const gameData = await apiService.getGameById(id);
-      setGame(gameData);
-      setLoading(false);
-    } catch (error) {
-      setError(`Error loading game: ${error.message}`);
-      setLoading(false);
-    }
-  };
 
   const formatDate = (dateString) => {
     const date = new Date(dateString);
